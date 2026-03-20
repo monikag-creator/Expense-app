@@ -23,7 +23,7 @@ pip install prettytable
 1. **Clone or download** this repository.
 2. **Run the script:**
 ```bash
-python expense_tracker.py
+python expense-app.py
 ```
 
 3. **Enter the number of users** and their names when prompted.
