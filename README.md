@@ -1,95 +1,33 @@
-# Expense-app
-Google Pay Expense Sharing
-# Expense Tracker
-A simple command-line expense splitting tool built with Python. Split bills equally or by custom amounts, track balances, and view transaction history — right from your terminal.
+# Expense Sharing App (Google Pay Style)
 
-## Features
-- **Multi-user support** — Add any number of users at startup
-- **Equal split** — Automatically divides expenses evenly among all users
-- **Custom split** — Manually assign specific amounts to each user
-- **Balance tracking** — See who owes whom at a glance
-- **Transaction history** — Review all past expenses with descriptions
-- **Clean table output** — Balances displayed using `PrettyTable`
+A command-line expense splitting tool that tracks shared group expenses and calculates exactly who owes whom, similar to Splitwise or Google Pay's expense-sharing feature.
 
-## Requirements
-- Python 3.x
-- [`prettytable`](https://pypi.org/project/prettytable/)
-Install the dependency with:
+## Problem Statement
+Splitting shared expenses among friends, roommates, or travel groups is often done manually — leading to confusion, forgotten payments, and disputes. Most people resort to mental math or messy spreadsheets to track who paid for what, which doesn't scale well for frequent group outings or trips. A simple, structured tool is needed to track group expenses and settle balances accurately.
+
+## Tech Stack
+- **Language:** Python
+- **Data Structures:** Dictionaries, Lists for transaction and balance tracking
+- **Display:** PrettyTable (formatted CLI output)
+- **Core Logic:** Custom balance-settlement algorithm
+
+## Approach
+1. Designed a command-line interface allowing users to add group members and log expenses.
+2. Implemented support for both **equal splits** (divided evenly among all members) and **custom splits** (user-defined amounts per person).
+3. Built a real-time balance tracking system that calculates net amounts owed between every pair of users.
+4. Added a transaction history log displaying payer name, amount, description, and date for full transparency.
+5. Used PrettyTable to render clean, readable tables of balances and transaction history directly in the terminal.
+
+## Business Solution
+This project demonstrates the core logic behind consumer expense-sharing features found in apps like Google Pay, Splitwise, and PhonePe. The underlying balance-settlement algorithm can be extended into a full mobile or web application for group trip planning, roommate expense management, or event cost-sharing — a common pain point for any group of people managing shared finances.
+
+## How to Run
 ```bash
-pip install prettytable
+git clone https://github.com/monikag-creator/Expense-app.git
+cd Expense-app
+pip install -r requirements.txt
+python main.py
 ```
 
-## Getting Started
-1. **Clone or download** this repository.
-2. **Run the script:**
-```bash
-python expense-app.py
-```
-
-3. **Enter the number of users** and their names when prompted.
-
-## Usage
-Once the app starts, you'll see this menu:
-```
-1. Add Expense
-2. Show Balances
-3. Show Transactions
-4. Exit
-```
-
-### Adding an Expense
-Choose option `1` and fill in:
-- **Payer name** — who paid the bill
-- **Total amount** — the full expense amount
-- **Description** — e.g., "Dinner", "Groceries"
-- **Split type** — `equal` or `custom`
-
-**Equal split example:**
-```
-Enter payer name: Alice
-Enter total amount: 300
-Enter expense description: Dinner
-Split type (equal/custom): equal
-```
-
-**Custom split example:**
-```
-Split type (equal/custom): custom
-Enter amount for Alice: 0
-Enter amount for Bob: 150
-Enter amount for Charlie: 150
-```
-
-### Viewing Balances
-Option `2` shows a table like:
-```
-+----------+---------+
-|   User   | Balance |
-+----------+---------+
-|  Alice   |  200.0  |
-|   Bob    | -100.0  |
-| Charlie  | -100.0  |
-+----------+---------+
-```
-- **Positive balance** → the user is owed money
-- **Negative balance** → the user owes money
-
-### Transaction History
-Option `3` lists all recorded expenses:
-```
-Transaction History
-Alice paid ₹300 for Dinner
-Bob paid ₹500 for Hotel
-```
----
-
-## Project Structure
-```
-├── README.md                                        # Project documentation
-├── google_expense_sharing-checkpoint.ipynb          # Jupyter Notebook (checkpoint backup)
-└── google_expense_sharing_checkpoint                # Checkpoint directory
-```
-
-## License
-
-This project is open source and free to use.
+## Author
+**Monika G** — [LinkedIn](https://www.linkedin.com/in/monika-g-4a2904388) | [GitHub](https://github.com/monikag-creator)
